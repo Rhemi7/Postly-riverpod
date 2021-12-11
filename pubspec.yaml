@@ -33,6 +33,11 @@ dependencies:
   flutter_bloc: ^7.0.0
   equatable: ^2.0.2
   mockito: ^5.0.9
+  dartz: ^0.10.0
+  connectivity: ^3.0.6
+  flutter_riverpod: ^0.14.0+3
+
+
 
 
 
