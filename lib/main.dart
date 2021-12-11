@@ -8,6 +8,7 @@ import 'package:Postly/utils/constants.dart';
 import 'package:Postly/view_model/postly_view_model.dart';
 import 'package:Postly/views/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart' as pp;
@@ -15,7 +16,7 @@ import 'package:path_provider/path_provider.dart' as pp;
 void main() async {
   await _openHive();
   await setUpLocator();
-  runApp(Postly());
+  runApp(ProviderScope(child: Postly()));
 }
 
 _openHive() async {
@@ -37,22 +38,37 @@ class Postly extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<PostlyViewModel>(
-      create: (context) => PostlyViewModel(),
-      child: MaterialApp(
-        title: 'Postly',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: kBackground,
-          appBarTheme: AppBarTheme(
-            elevation: 0,
-            color: kPrimaryColor,
-          ),
-          fontFamily: "Poppins-Regular",
+    return MaterialApp(
+      title: 'Postly',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: kBackground,
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          color: kPrimaryColor,
         ),
-        onGenerateRoute: _appRouter.onGenerateRoute,
+        fontFamily: "Poppins-Regular",
       ),
+      onGenerateRoute: _appRouter.onGenerateRoute,
     );
+
+    // return ChangeNotifierProvider<PostlyViewModel>(
+    //   create: (context) => PostlyViewModel(),
+    //   child: MaterialApp(
+    //     title: 'Postly',
+    //     debugShowCheckedModeBanner: false,
+    //     theme: ThemeData(
+    //       visualDensity: VisualDensity.adaptivePlatformDensity,
+    //       scaffoldBackgroundColor: kBackground,
+    //       appBarTheme: AppBarTheme(
+    //         elevation: 0,
+    //         color: kPrimaryColor,
+    //       ),
+    //       fontFamily: "Poppins-Regular",
+    //     ),
+    //     onGenerateRoute: _appRouter.onGenerateRoute,
+    //   ),
+    // );
   }
 }

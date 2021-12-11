@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 //hive repository names
 const String kUserBox = 'user_box';
 const String kUser = 'user';
+
 const String kPostBox = 'post_box';
 const String kPosts = 'post';
+
+const String kPointsBox = 'point_box';
+const String kPoints = 'points';
 
 //Colors
 const Color kPrimaryColor = Color(0xff4B75BF);

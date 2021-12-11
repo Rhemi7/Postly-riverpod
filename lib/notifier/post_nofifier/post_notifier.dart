@@ -20,8 +20,8 @@ class PostNotifier extends StateNotifier<PostState> {
       state = PostLoading();
       vmPosts = _hiveRepository
           .getList<List<Post>>(key: kPosts, name: kPostBox)
-          // .cast<Post>()
-          .toList();
+          .cast<Post>();
+      // .toList();
       print('vmPost $vmPosts');
       if (vmPosts == null) {
         final List<Post> posts = await postServices.getPosts();

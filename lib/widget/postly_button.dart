@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 class PostlyButton extends StatelessWidget {
   const PostlyButton({
     Key key,
-    this.viewModel,
+    // this.viewModel,
     this.postController,
     this.titleController,
     @required this.onPressed,
     @required this.child,
   }) : super(key: key);
 
-  final PostlyViewModel viewModel;
+  // final PostlyViewModel viewModel;
   final TextEditingController postController;
   final TextEditingController titleController;
   final Function onPressed;

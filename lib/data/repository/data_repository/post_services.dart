@@ -13,7 +13,8 @@ class PostServices {
       return posts;
     } catch (e) {
       print(e);
-      return null;
+      throw e;
+      // return (e.toString());
     }
   }
 }
