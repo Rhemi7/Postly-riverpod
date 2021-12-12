@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:Postly/data/repository/data_repository/post_services.dart';
 import 'package:Postly/data/repository/database/hive_repository.dart';
-import 'package:Postly/models/posts/post.dart';
+import 'package:Postly/features/post/data/models/posts/post.dart';
 import 'package:Postly/notifier/post_nofifier/post_state.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
 
 part 'post.g.dart';
@@ -15,22 +17,22 @@ String postToJson(List<Post> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 @HiveType(typeId: 5)
-class Post {
+class Post extends Equatable {
   Post({
-    this.userId,
+    @required this.userId,
     this.id,
     this.title,
     this.body,
   });
 
   @HiveField(0)
-  int userId;
+  final int userId;
   @HiveField(1)
-  int id;
+  final int id;
   @HiveField(2)
-  String title;
+  final String title;
   @HiveField(3)
-  String body;
+  final String body;
 
   factory Post.fromJson(Map<String, dynamic> json) => Post(
         userId: json["userId"],
@@ -45,4 +47,8 @@ class Post {
         "title": title,
         "body": body,
       };
+
+  @override
+  // TODO: implement props
+  List<Object> get props => [id, title, body, userId];
 }

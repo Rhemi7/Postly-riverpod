@@ -1,4 +1,4 @@
-import 'package:Postly/animation/blinking_widget.dart';
+import 'package:Postly/core/animation/blinking_widget.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:Postly/widget/postly_button.dart';
 import 'package:flutter/cupertino.dart';

@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:Postly/exception.dart';
+import 'package:Postly/core/error/exception.dart';
 import 'package:http/http.dart' as http;
 import 'package:Postly/data/data_provider/api_url.dart';
 

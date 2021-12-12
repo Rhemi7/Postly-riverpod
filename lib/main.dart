@@ -2,7 +2,6 @@ import 'package:Postly/locator.dart';
 import 'package:Postly/models/address/address.dart';
 import 'package:Postly/models/company/company.dart';
 import 'package:Postly/models/geo/geo.dart';
-import 'package:Postly/models/posts/post.dart';
 import 'package:Postly/models/user/user.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:Postly/view_model/postly_view_model.dart';
@@ -12,6 +11,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart' as pp;
+
+import 'features/post/data/models/posts/post.dart';
 
 void main() async {
   await _openHive();

@@ -1,4 +1,4 @@
-import 'package:Postly/models/posts/post.dart';
+import 'package:Postly/features/post/data/models/posts/post.dart';
 import 'package:Postly/notifier/post_nofifier/post_notifier.dart';
 import 'package:Postly/notifier/post_nofifier/post_state.dart';
 import 'package:Postly/notifier/user_notifier/user_state.dart';
