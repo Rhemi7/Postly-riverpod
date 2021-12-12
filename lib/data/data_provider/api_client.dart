@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:Postly/core/error/exception.dart';
+import 'package:Postly/core/error/failure.dart';
 import 'package:http/http.dart' as http;
 import 'package:Postly/data/data_provider/api_url.dart';
 
@@ -24,7 +25,7 @@ class ApiClient {
     } else {
       print(
           'reason is ${response.reasonPhrase} message is ${decoded['message']}');
-      throw ApiFailureException(decoded['message'] ?? response.reasonPhrase);
+      // throw Failure(decoded['message'] ?? response.reasonPhrase);
     }
   }
 }

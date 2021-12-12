@@ -1,6 +1,3 @@
-class ApiFailureException implements Exception {
-  dynamic message;
-  ApiFailureException([this.message]);
-  @override
-  String toString() => message.toString();
-}
+class ServerException implements Exception {}
+
+class CacheException implements Exception {}

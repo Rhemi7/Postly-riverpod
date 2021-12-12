@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 
+import 'package:Postly/features/post/domain/entities/post_entity.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
@@ -17,13 +18,13 @@ String postToJson(List<Post> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 @HiveType(typeId: 5)
-class Post extends Equatable {
+class Post extends PostEntity {
   Post({
     @required this.userId,
     this.id,
     this.title,
     this.body,
-  });
+  }) : super(id: id, title: title, body: body, userId: userId);
 
   @HiveField(0)
   final int userId;
@@ -47,8 +48,4 @@ class Post extends Equatable {
         "title": title,
         "body": body,
       };
-
-  @override
-  // TODO: implement props
-  List<Object> get props => [id, title, body, userId];
 }
