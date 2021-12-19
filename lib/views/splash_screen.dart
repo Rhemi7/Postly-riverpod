@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.dispose();
   }
 
-  var _hiveRepository = locator<HiveRepository>();
+  var _hiveRepository = sl<HiveRepository>();
 
   // function checks to see if there is a user locally
   _prepareAppState() async {

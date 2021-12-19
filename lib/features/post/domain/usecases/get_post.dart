@@ -7,7 +7,7 @@ import 'package:dartz/dartz.dart';
 
 class GetPost extends UseCase<List<Post>, NoParams> {
   final PostRepository postRepository;
-  GetPost({this.postRepository});
+  GetPost(this.postRepository);
 
   @override
   Future<Either<Failure, List<Post>>> call(NoParams params) async {

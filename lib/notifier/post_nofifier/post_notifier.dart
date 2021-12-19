@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:Postly/core/usecases/usecase.dart';
 import 'package:Postly/data/repository/data_repository/post_services.dart';
 import 'package:Postly/data/repository/database/hive_repository.dart';
 import 'package:Postly/features/post/data/models/posts/post.dart';
+import 'package:Postly/features/post/domain/usecases/get_post.dart';
 import 'package:Postly/notifier/post_nofifier/post_state.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,29 +12,35 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class PostNotifier extends StateNotifier<PostState> {
   List<Post> vmPosts = [];
 
-  PostServices postServices;
+  // PostServices postServices;
+  GetPost getAllPost;
   HiveRepository _hiveRepository;
 
-  PostNotifier(this.postServices, this._hiveRepository) : super(PostInitial());
+  PostNotifier(this.getAllPost, this._hiveRepository) : super(PostInitial());
 
   Future getPosts() async {
     try {
       state = PostLoading();
-      vmPosts = _hiveRepository
-          .getList<List<Post>>(key: kPosts, name: kPostBox)
-          .cast<Post>();
+      // vmPosts = _hiveRepository
+      //     .getList<List<Post>>(key: kPosts, name: kPostBox)
+      //     .cast<Post>();
       // .toList();
       print('vmPost $vmPosts');
-      if (vmPosts == null) {
-        final List<Post> posts = await postServices.getPosts();
+      // if (vmPosts == null) {
+      final result = await getAllPost(NoParams());
+
+      result.fold((error) => state = PostError(message: "Error"), (posts) {
         vmPosts = posts;
-        print('postSN $posts');
-        _hiveRepository.add<List<Post>>(
-            name: kPostBox, key: kPosts, item: posts);
-        state = PostLoaded(posts: posts);
-      } else {
         state = PostLoaded(posts: vmPosts);
-      }
+      });
+      // vmPosts = r;
+      // print('postSN $r');
+      // _hiveRepository.add<List<Post>>(
+      //     name: kPostBox, key: kPosts, item: posts);
+      // state = PostLoaded(posts: posts);
+      // } else {
+      //   state = PostLoaded(posts: vmPosts);
+      // }
     } catch (e) {
       print('error post');
       print(e.toString());

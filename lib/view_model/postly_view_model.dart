@@ -16,9 +16,9 @@ import 'package:flutter/material.dart';
 import '../locator.dart';
 
 class PostlyViewModel extends ChangeNotifier {
-  var _userServices = locator<UserServices>();
-  var _postServices = locator<PostServices>();
-  var _hiveRepository = locator<HiveRepository>();
+  var _userServices = sl<UserServices>();
+  var _postServices = sl<PostServices>();
+  var _hiveRepository = sl<HiveRepository>();
   List<User> users = [];
   List<Post> posts = [];
   Random randomNum = Random();

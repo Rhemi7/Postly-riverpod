@@ -14,7 +14,7 @@ abstract class PostRemoteDataSource {
 class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   @override
   Future<List<Post>> getPost() async {
-    var _apiClient = locator<ApiClient>();
+    var _apiClient = sl<ApiClient>();
 
     try {
       final data = await _apiClient.get("posts");

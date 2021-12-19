@@ -4,7 +4,7 @@ import 'package:Postly/models/user/user.dart';
 import '../../../locator.dart';
 
 class UserServices {
-  var _apiClient = locator<ApiClient>();
+  var _apiClient = sl<ApiClient>();
 
   Future<List<User>> getUsers() async {
     try {
