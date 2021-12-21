@@ -6,7 +6,7 @@ import 'package:Postly/data/repository/database/hive_repository.dart';
 import 'package:Postly/data/repository/database/hive_service.dart';
 import 'package:Postly/features/post/data/models/posts/post.dart';
 import 'package:Postly/features/post/domain/usecases/get_post.dart';
-import 'package:Postly/notifier/post_nofifier/post_state.dart';
+import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_state.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -6,7 +6,6 @@ import 'package:Postly/features/post/data/repositories/post_repository_impl.dart
 import 'package:Postly/features/post/domain/repositories/post_repository.dart';
 import 'package:Postly/features/post/domain/usecases/get_post.dart';
 import 'package:Postly/notifier/points_notifier/points_notifier.dart';
-import 'package:Postly/notifier/post_nofifier/post_notifier.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 
@@ -14,6 +13,7 @@ import 'core/platform/network_info.dart';
 import 'data/data_provider/api_client.dart';
 import 'data/repository/data_repository/post_services.dart';
 import 'data/repository/data_repository/user_services.dart';
+import 'features/post/presentation/notifier/post_nofifier/post_notifier.dart';
 
 GetIt sl = GetIt.instance;
 
