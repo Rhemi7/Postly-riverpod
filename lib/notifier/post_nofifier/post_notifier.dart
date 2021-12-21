@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:Postly/core/usecases/usecase.dart';
 import 'package:Postly/data/repository/data_repository/post_services.dart';
 import 'package:Postly/data/repository/database/hive_repository.dart';
+import 'package:Postly/data/repository/database/hive_service.dart';
 import 'package:Postly/features/post/data/models/posts/post.dart';
 import 'package:Postly/features/post/domain/usecases/get_post.dart';
 import 'package:Postly/notifier/post_nofifier/post_state.dart';
@@ -14,7 +15,7 @@ class PostNotifier extends StateNotifier<PostState> {
 
   // PostServices postServices;
   GetPost getAllPost;
-  HiveRepository _hiveRepository;
+  HiveServices _hiveRepository;
 
   PostNotifier(this.getAllPost, this._hiveRepository) : super(PostInitial());
 

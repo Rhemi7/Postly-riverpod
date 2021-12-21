@@ -1,4 +1,5 @@
 import 'package:Postly/data/repository/database/hive_repository.dart';
+import 'package:Postly/data/repository/database/hive_service.dart';
 import 'package:Postly/features/post/data/data_sources/post_local_data_source.dart';
 import 'package:Postly/features/post/data/data_sources/post_remote_data_source.dart';
 import 'package:Postly/features/post/data/repositories/post_repository_impl.dart';
@@ -17,6 +18,8 @@ import 'data/repository/data_repository/user_services.dart';
 GetIt sl = GetIt.instance;
 
 Future<void> setUpLocator() async {
+  sl.registerLazySingleton<HiveServices>(() => HiveServices());
+
   sl.registerLazySingleton<HiveRepository>(() => HiveRepository());
   sl.registerLazySingleton<UserServices>(() => UserServices());
   sl.registerLazySingleton<PostServices>(() => PostServices());
