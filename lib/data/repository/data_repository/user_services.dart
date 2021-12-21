@@ -1,5 +1,5 @@
 import 'package:Postly/data/data_provider/api_client.dart';
-import 'package:Postly/models/user/user.dart';
+import 'package:Postly/features/user/data/models/user/user.dart';
 
 import '../../../locator.dart';
 

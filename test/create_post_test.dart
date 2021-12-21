@@ -1,8 +1,8 @@
 import 'package:Postly/data/repository/database/hive_repository.dart';
-import 'package:Postly/models/address/address.dart';
-import 'package:Postly/models/company/company.dart';
-import 'package:Postly/models/geo/geo.dart';
-import 'package:Postly/models/user/user.dart';
+import 'package:Postly/features/user/data/models/address/address.dart';
+import 'package:Postly/features/user/data/models/company/company.dart';
+import 'package:Postly/features/user/data/models/geo/geo.dart';
+import 'package:Postly/features/user/data/models/user/user.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

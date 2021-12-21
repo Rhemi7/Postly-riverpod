@@ -1,4 +1,4 @@
-import 'package:Postly/models/geo/geo.dart';
+import 'package:Postly/features/user/data/models/geo/geo.dart';
 import 'package:hive/hive.dart';
 part 'address.g.dart';
 

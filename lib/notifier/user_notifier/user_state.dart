@@ -1,4 +1,4 @@
-import 'package:Postly/models/user/user.dart';
+import 'package:Postly/features/user/data/models/user/user.dart';
 
 abstract class UserState {
   const UserState();

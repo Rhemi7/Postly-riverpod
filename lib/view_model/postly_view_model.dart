@@ -5,7 +5,7 @@ import 'package:Postly/data/repository/data_repository/post_services.dart';
 import 'package:Postly/data/repository/data_repository/user_services.dart';
 import 'package:Postly/data/repository/database/hive_repository.dart';
 import 'package:Postly/features/post/data/models/posts/post.dart';
-import 'package:Postly/models/user/user.dart';
+import 'package:Postly/features/user/data/models/user/user.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:Postly/widget/badge.dart';
 import 'package:Postly/widget/pop_up_dialog.dart';

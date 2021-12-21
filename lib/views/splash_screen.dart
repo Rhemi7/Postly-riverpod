@@ -1,7 +1,7 @@
 import 'package:Postly/data/repository/database/hive_repository.dart';
 import 'package:Postly/features/post/data/models/posts/post.dart';
+import 'package:Postly/features/user/data/models/user/user.dart';
 import 'package:Postly/locator.dart';
-import 'package:Postly/models/user/user.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:Postly/view_model/postly_view_model.dart';
 import 'package:Postly/view_model/providers.dart';

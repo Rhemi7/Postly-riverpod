@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-import 'package:Postly/models/address/address.dart';
-import 'package:Postly/models/company/company.dart';
+import 'package:Postly/features/user/data/models/address/address.dart';
+import 'package:Postly/features/user/data/models/company/company.dart';
 import 'package:hive/hive.dart';
 
 part 'user.g.dart';
