@@ -7,10 +7,10 @@ import 'package:Postly/features/post/domain/usecases/get_post.dart';
 import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_notifier.dart';
 import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_state.dart';
 import 'package:Postly/features/user/domain/usecases/get_user.dart';
+import 'package:Postly/features/user/presentation/notifier/user_notifier/user_notifier.dart';
+import 'package:Postly/features/user/presentation/notifier/user_notifier/user_state.dart';
 import 'package:Postly/locator.dart';
 import 'package:Postly/notifier/points_notifier/points_notifier.dart';
-import 'package:Postly/notifier/user_notifier/user_notifier.dart';
-import 'package:Postly/notifier/user_notifier/user_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 

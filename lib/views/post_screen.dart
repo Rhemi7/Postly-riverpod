@@ -1,6 +1,6 @@
 import 'package:Postly/features/post/data/models/posts/post.dart';
 import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_state.dart';
-import 'package:Postly/notifier/user_notifier/user_state.dart';
+import 'package:Postly/features/user/presentation/notifier/user_notifier/user_state.dart';
 import 'package:Postly/utils/constants.dart';
 import 'package:Postly/utils/margins.dart';
 import 'package:Postly/view_model/postly_view_model.dart';
