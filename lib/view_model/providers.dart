@@ -6,6 +6,7 @@ import 'package:Postly/data/repository/database/hive_service.dart';
 import 'package:Postly/features/post/domain/usecases/get_post.dart';
 import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_notifier.dart';
 import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_state.dart';
+import 'package:Postly/features/user/domain/usecases/get_user.dart';
 import 'package:Postly/locator.dart';
 import 'package:Postly/notifier/points_notifier/points_notifier.dart';
 import 'package:Postly/notifier/user_notifier/user_notifier.dart';
@@ -23,6 +24,8 @@ final pointsNotifierProvider = StateNotifierProvider(
 
 final postProvider = Provider<GetPost>((ref) => GetPost(sl()));
 
+final userProvider = Provider<GetUser>((ref) => GetUser(sl()));
+
 final postNotifierProvider =
     StateNotifierProvider<PostNotifier, PostState>((ref) => PostNotifier(
           ref.watch(postProvider),
@@ -33,6 +36,5 @@ final userServicesProvider = Provider<UserServices>((ref) => UserServices());
 
 final userNotifierProvider =
     StateNotifierProvider<UserNotifier, UserState>((ref) => UserNotifier(
-          ref.watch(userServicesProvider),
-          ref.watch(hiveNotifierProvider),
+          ref.watch(userProvider),
         ));
