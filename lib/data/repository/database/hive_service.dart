@@ -6,6 +6,7 @@ import 'package:hive/hive.dart';
 class HiveServices {
   Box _postBox = Hive.box(kPostBox);
   Box _userBox = Hive.box(kUserBox);
+  Box _pointsBox = Hive.box(kPointsBox);
 
   Future<void> insertPost(List<Post> posts) async {
     _postBox.put(kPosts, posts);
@@ -23,5 +24,14 @@ class HiveServices {
 
   User getHiveUser() {
     return _userBox.get(kUser);
+  }
+
+  Future<void> insertPoint(int point) async {
+    _pointsBox.put(kPoints, point);
+    print('user in hive');
+  }
+
+  int getUserPoint() {
+    return _pointsBox.get(kPoints);
   }
 }
