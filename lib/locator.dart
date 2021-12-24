@@ -9,6 +9,7 @@ import 'package:Postly/features/user/data/data_sources/user_local_data_source.da
 import 'package:Postly/features/user/data/data_sources/user_remote_date_source.dart';
 import 'package:Postly/features/user/data/repositories/user_repository_impl.dart';
 import 'package:Postly/features/user/domain/repositories/user_repository.dart';
+import 'package:Postly/features/user/presentation/notifier/user_notifier/user_notifier.dart';
 import 'package:Postly/notifier/points_notifier/points_notifier.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
@@ -34,6 +35,7 @@ Future<void> setUpLocator() async {
   //Riverpod State notifiers
   sl.registerLazySingleton(() => PostNotifier(sl(), sl()));
   sl.registerLazySingleton(() => PointsNotifier(sl()));
+  sl.registerLazySingleton(() => UserNotifier(sl()));
 
   //Post Datasource
   sl.registerLazySingleton<PostRemoteDataSource>(

@@ -20,7 +20,7 @@ final hiveNotifierProvider =
 final hiveServiceProvider = Provider<HiveServices>((ref) => HiveServices());
 
 final pointsNotifierProvider = StateNotifierProvider(
-    (ref) => PointsNotifier(ref.watch(hiveNotifierProvider)));
+    (ref) => PointsNotifier(ref.watch(hiveServiceProvider)));
 
 final postProvider = Provider<GetPost>((ref) => GetPost(sl()));
 
