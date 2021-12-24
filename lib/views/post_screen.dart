@@ -1,3 +1,4 @@
+import 'package:Postly/core/user_badge.dart';
 import 'package:Postly/features/post/data/models/posts/post.dart';
 import 'package:Postly/features/post/presentation/notifier/post_nofifier/post_state.dart';
 import 'package:Postly/features/user/presentation/notifier/user_notifier/user_state.dart';
@@ -94,7 +95,11 @@ class PostScreen extends StatelessWidget {
                   Spacer(),
                   // returns the badge depending on the user's score
                   // viewModel.badge()
-                  Text('Badge')
+                  // Text('Badge')
+                  Consumer(builder: (context, watch, child) {
+                    final pointState = watch(pointsNotifierProvider);
+                    return UserBadge.getUserBadge(pointState);
+                  })
                 ],
               ),
             ),
