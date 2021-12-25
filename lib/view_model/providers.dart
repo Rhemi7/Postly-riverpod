@@ -1,3 +1,4 @@
+import 'package:Postly/core/check_points.dart';
 import 'package:Postly/data/repository/data_repository/post_services.dart';
 import 'package:Postly/data/repository/data_repository/user_services.dart';
 import 'package:Postly/data/repository/database/hive_interface.dart';
@@ -18,9 +19,10 @@ final hiveNotifierProvider =
     Provider<HiveRepository>((ref) => HiveRepository());
 
 final hiveServiceProvider = Provider<HiveServices>((ref) => HiveServices());
+final checkPointsProvider = Provider<CheckPoints>((ref) => CheckPoints(ref.watch(hiveServiceProvider)));
 
 final pointsNotifierProvider = StateNotifierProvider(
-    (ref) => PointsNotifier(ref.watch(hiveServiceProvider)));
+    (ref) => PointsNotifier(ref.watch(hiveServiceProvider), ref.watch(checkPointsProvider)));
 
 final postProvider = Provider<GetPost>((ref) => GetPost(sl()));
 

@@ -1,3 +1,4 @@
+import 'package:Postly/core/check_points.dart';
 import 'package:Postly/data/repository/database/hive_repository.dart';
 import 'package:Postly/data/repository/database/hive_service.dart';
 import 'package:Postly/features/post/data/data_sources/post_local_data_source.dart';
@@ -34,7 +35,7 @@ Future<void> setUpLocator() async {
 
   //Riverpod State notifiers
   sl.registerLazySingleton(() => PostNotifier(sl(), sl()));
-  sl.registerLazySingleton(() => PointsNotifier(sl()));
+  sl.registerLazySingleton(() => PointsNotifier(sl(), sl()));
   sl.registerLazySingleton(() => UserNotifier(sl()));
 
   //Post Datasource
@@ -65,6 +66,9 @@ Future<void> setUpLocator() async {
 
   //Network info
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
+
+  //checkPoints
+  sl.registerLazySingleton<CheckPoints>(() => CheckPoints(sl()));
 
   //Usecases
   sl.registerLazySingleton<GetPost>(() => GetPost(sl()));

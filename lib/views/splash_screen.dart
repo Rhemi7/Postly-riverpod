@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
     await HiveRepository.openHives([kUserBox, kPostBox, kPointsBox]);
     context.read(postNotifierProvider.notifier).getPosts();
     context.read(userNotifierProvider.notifier).getUser();
-    context.read(pointsNotifierProvider.notifier).getPoints();
+    context.read(pointsNotifierProvider.notifier).getPoints(context);
 
     // viewModel.setPosts(posts);
     // viewModel.posts = posts;
