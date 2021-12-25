@@ -31,7 +31,7 @@ class HiveServices {
     print('user in hive');
   }
 
-  int getUserPoint() {
-    return _pointsBox.get(kPoints);
+  Future<int> getUserPoint() async {
+    return Future.value(_pointsBox.get(kPoints));
   }
 }
