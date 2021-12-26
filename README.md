@@ -1,3 +1,5 @@
+[![CI](https://github.com/Rhemi7/Postly-riverpod/actions/workflows/main.yml/badge.svg)](https://github.com/Rhemi7/Postly-riverpod/actions/workflows/main.yml)
+
 # Postly
 
 Postly a social app that lets you share your thoughts and get comments from the community.
