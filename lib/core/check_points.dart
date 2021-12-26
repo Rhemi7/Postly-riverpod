@@ -7,15 +7,11 @@ class CheckPoints {
   HiveServices _hiveServices;
   CheckPoints(this._hiveServices);
 
-  Future<int> pointCheck(BuildContext context) async {
-    var point = await _hiveServices.getUserPoint();
+  Future<bool> pointCheck(int point) async {
     if (point > 16) {
-      await showDialog(
-        context: context,
-        builder: (BuildContext context) => PopupDialog(),
-      );
       _hiveServices.insertPoint(0);
+      return true;
     }
-    return _hiveServices.getUserPoint();
+    return false;
   }
 }
