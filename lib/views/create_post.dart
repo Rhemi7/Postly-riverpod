@@ -90,8 +90,10 @@ class CreatePostScreen extends StatelessWidget {
                         postText: postController.text);
                     pointsNotifier.increment();
 
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, POST_SCREEN_ROUTE, (route) => false);
+                    Navigator.pop(context);
+
+                    // Navigator.pushNamedAndRemoveUntil(
+                    //     context, POST_SCREEN_ROUTE, (route) => false);
 
                     // viewModel.createPost(context);
                     // postController.clear();

@@ -7,12 +7,43 @@ import 'package:Postly/utils/margins.dart';
 import 'package:Postly/view_model/postly_view_model.dart';
 import 'package:Postly/view_model/providers.dart';
 import 'package:Postly/views/create_post.dart';
+import 'package:Postly/widget/pop_up_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:provider/provider.dart';
 
-class PostScreen extends StatelessWidget {
+class PostScreen extends StatefulWidget {
+  @override
+  State<PostScreen> createState() => _PostScreenState();
+}
+
+class _PostScreenState extends State<PostScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      checkPoint();
+    });
+    super.didChangeDependencies();
+  }
+
+  void checkPoint() async {
+    int point = await context.read(pointsNotifierProvider.notifier).state;
+    // print('show $show');
+    if (point > 16) {
+      await showDialog(
+        context: context,
+        builder: (BuildContext context) => PopupDialog(),
+      );
+      context.read(pointsNotifierProvider.notifier).state = 0;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // var viewModel = Provider.of<PostlyViewModel>(context);
