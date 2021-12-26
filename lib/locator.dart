@@ -15,7 +15,7 @@ import 'package:Postly/notifier/points_notifier/points_notifier.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 
-import 'core/platform/network_info.dart';
+import 'core/network_info/network_info.dart';
 import 'data/data_provider/api_client.dart';
 import 'data/repository/data_repository/post_services.dart';
 import 'data/repository/data_repository/user_services.dart';

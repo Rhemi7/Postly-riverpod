@@ -98,7 +98,19 @@ class PostScreen extends StatelessWidget {
                   // Text('Badge')
                   Consumer(builder: (context, watch, child) {
                     final pointState = watch(pointsNotifierProvider);
-                    return UserBadge.getUserBadge(pointState);
+                    return Column(
+                      children: [
+                        Text(
+                          UserBadge.getUserBadge(pointState).level,
+                          style: TextStyle(color: kSubTextColor, fontSize: 13),
+                        ),
+                        Image.asset(
+                          'assets/images/${UserBadge.getUserBadge(pointState).image}.png',
+                          scale: 4,
+                        ),
+                      ],
+                    );
+                    // return UserBadge.getUserBadge(pointState);
                   })
                 ],
               ),

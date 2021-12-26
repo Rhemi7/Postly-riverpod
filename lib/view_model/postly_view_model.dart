@@ -133,17 +133,17 @@ class PostlyViewModel extends ChangeNotifier {
   }
 
   // This method returns a widget depending on user points
-  Widget badge() {
-    Widget userBadge;
-    if (_viewPoints < 6) {
-      userBadge = Badge(level: 'Beginner', image: 'beginner');
-    } else if (_viewPoints >= 6 && viewPoints < 10) {
-      userBadge = Badge(level: 'Intermediate', image: 'intermediate');
-    } else if (_viewPoints >= 10 && viewPoints <= 16) {
-      userBadge = Badge(level: 'Professional', image: 'professional');
-    } else if (_viewPoints > 16) {
-      userBadge = Badge(level: 'Legend', image: 'legend');
-    }
-    return userBadge;
-  }
+  // Widget badge() {
+  //   Widget userBadge;
+  //   if (_viewPoints < 6) {
+  //     userBadge = Badge(level: 'Beginner', image: 'beginner');
+  //   } else if (_viewPoints >= 6 && viewPoints < 10) {
+  //     userBadge = Badge(level: 'Intermediate', image: 'intermediate');
+  //   } else if (_viewPoints >= 10 && viewPoints <= 16) {
+  //     userBadge = Badge(level: 'Professional', image: 'professional');
+  //   } else if (_viewPoints > 16) {
+  //     userBadge = Badge(level: 'Legend', image: 'legend');
+  //   }
+  //   return userBadge;
+  // }
 }
