@@ -1,25 +1,15 @@
 import 'package:Postly/utils/constants.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-class Badge extends StatelessWidget {
+class Badge extends Equatable {
   final String level;
   final String image;
 
   Badge({@required this.level, @required this.image});
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          level,
-          style: TextStyle(color: kSubTextColor, fontSize: 13),
-        ),
-        Image.asset(
-          'assets/images/$image.png',
-          scale: 4,
-        ),
-      ],
-    );
-  }
+  // TODO: implement props
+  List<Object> get props => [this.image, this.level];
+
 }

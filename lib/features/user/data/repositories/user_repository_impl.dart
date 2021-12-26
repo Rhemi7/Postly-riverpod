@@ -1,6 +1,6 @@
 import 'package:Postly/core/error/exception.dart';
 import 'package:Postly/core/error/failure.dart';
-import 'package:Postly/core/platform/network_info.dart';
+import 'package:Postly/core/network_info/network_info.dart';
 import 'package:Postly/features/user/data/data_sources/user_local_data_source.dart';
 import 'package:Postly/features/user/data/data_sources/user_remote_date_source.dart';
 import 'package:Postly/features/user/data/models/user/user.dart';
